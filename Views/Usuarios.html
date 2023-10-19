@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CRUD de Usuarios</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../Assets/Styles/Sidebar.css">
+    <link rel="stylesheet" href="../Assets/Styles/Logos.css">
+    <link rel="stylesheet" href="../Assets/Styles/Mensajes.css">
+
+    
+</head>
+<body>
+    <div class="sidebar" id="mySidebar">
+        <div class="side-header">
+            <img src="../Assets/Img/logo.png" width="120" height="120" alt="Swiss Collection">
+            <h5 style="margin-top: 10px;">Hello, Admin!</h5>
+        </div>
+        <hr style="border: 1px solid; background-color: #8a7b6d; border-color: #3B3131;">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" onclick="showCustomers()"><i class="fa fa-home"></i> Dashboard</a>
+        <a href="Usuarios.html" onclick="showCustomers()"><i class="fa fa-users"></i> Users</a>
+        <a href="Gift_Cards.html" onclick="showCategory()"><i class="fa fa-th-large"></i> Gift Cards</a>
+    </div>
+
+    <div class="logo-container">
+        <a href="../index.html"><img src="../Assets/Img/Logo2.png" class="logo" alt="Tu Logo"></a>
+    </div>
+
+    <div id="main">
+        <button class="openbtn" onclick="openNav()" style="margin-top: -10px;">
+            <i class="fa fa-home"></i>
+        </button>
+        <div class="container">
+            <h1 style="text-align: center; margin-top: -40px;">Administración de Usuarios</h1>
+            <br><br>
+
+            <!-- Formulario de Agregar Usuario -->
+            <div class="row mt-3">
+                <div class="col-12 col-md-6 offset-md-3">
+                    <h3>Agregar nuevo Usuario</h3>
+                    <form id="formUsuario">
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="contrasena" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="contrasena" required />
+                        </div>
+                        <div class="mt-3 d-flex justify-content-end">
+                            <button class="btn btn-info" type="submit">Guardar</button>
+                        </div>
+                    </form>
+                    <div class="mt-3 text-center">
+                        <div id="mensaje" class="alert alert-success mensaje" style="display: none;"></div>
+                    </div>
+                    <div class="mt-3 text-center">
+                        <div id="mensajeActualizar" class="alert alert-warning mensaje" style="display: none;"></div>
+                    </div>
+                    <div class="mt-3 text-center">
+                        <div id="mensajeEliminar" class "alert alert-danger mensaje" style="display: none;"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Tabla de Contenido -->
+            <div class="row">
+                <div class="col-12 col-md-8 offset-md-2">
+                    <h3>Tabla de Usuarios</h3>
+                    <br>
+                    <div class="input-group mb-3">
+                        <input type="text" id="busqueda" class="form-control" placeholder="Buscar" />
+                    </div>
+                    <br>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Email</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cuerpo-tabla">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modalUsuario" tabindex="-1" aria-labelledby="modalUsuarioLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalUsuarioLabel">Editar Usuario</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formModal">
+                            <div class="mb-3">
+                                <label for="nombreModal" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="nombreModal" required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="emailModal" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="emailModal" required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="contrasenaModal" class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="contrasenaModal" required />
+                            </div>
+                            <div class="mt-3 d-flex justify-content-end">
+                                <button class="btn btn-warning">Actualizar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../JS/Sidebar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="../JS/App_Usuarios.js" type="module"></script>
+    <script src="https://use.fontawesome.com/c2813ccf5b.js"></script>
+</body>
+</html>

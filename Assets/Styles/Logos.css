@@ -1,0 +1,17 @@
+.logo-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.logo {
+    position: fixed;
+    top: 600px;
+    right: 40px;
+    max-width: 90px;
+}
+body{
+    background-image: url("../ProyectoCrudJM/img/imagen.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
