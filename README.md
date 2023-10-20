@@ -22,7 +22,7 @@ La instalación del software se caracteriza por su simplicidad. En la sección p
 
 ## Creditos
 <ul>
-  <li>Desarrollador y Diseñador: Samuel Saldarriaga Ramirez - Aprendiz SENA</li>
+  <li>Desarrollador y Diseñador: Jose manuel vasquez - Aprendiz SENA</li>
 </ul>
 
 ![](https://o.remove.bg/downloads/0fd3a290-357c-431e-9a18-f310b3281b65/pngtree-web-development-blue-gradient-concept-icon-programming-logo-software-vector-png-image_12735498-removebg-preview.png)
